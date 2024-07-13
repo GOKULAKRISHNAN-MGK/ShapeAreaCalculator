@@ -1,10 +1,12 @@
-package com.example.shapes;
+package com.example.shapes.controller;
 
+import com.example.shapes.factory.ShapeFactory;
+import com.example.shapes.model.Shape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/shape")
+@RequestMapping("/shapes")
 public class ShapeController {
 
     @Autowired

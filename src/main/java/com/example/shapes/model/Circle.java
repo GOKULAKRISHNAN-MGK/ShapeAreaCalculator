@@ -1,5 +1,6 @@
-package com.example.shapes;
+package com.example.shapes.model;
 
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,4 +19,8 @@ public class Circle implements Shape {
     public double calculateArea() {
         return Math.PI * radius * radius;
     }
+
+    @PostConstruct
+    public void init() {}
+
 }

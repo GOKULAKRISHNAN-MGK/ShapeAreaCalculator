@@ -1,5 +1,9 @@
-package com.example.shapes;
+package com.example.shapes.factory;
 
+import com.example.shapes.model.Circle;
+import com.example.shapes.model.Rectangle;
+import com.example.shapes.model.Shape;
+import com.example.shapes.model.Square;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,11 +22,11 @@ public class ShapeFactory {
         }
 
         if (shape instanceof Circle) {
-            return new Circle(dimensions[0]);
+            return Circle.builder().radius(dimensions[0]).build();
         } else if (shape instanceof Rectangle) {
-            return new Rectangle(dimensions[0], dimensions[1]);
+            return Rectangle.builder().length(dimensions[0]).width(dimensions[1]).build();
         } else if (shape instanceof Square) {
-            return new Square(dimensions[0]);
+            return Square.builder().side(dimensions[0]).build();
         } else {
             throw new IllegalArgumentException("Invalid shape type");
         }

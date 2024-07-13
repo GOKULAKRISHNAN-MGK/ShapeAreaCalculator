@@ -1,21 +1,26 @@
-package com.example.shapes;
+package com.example.shapes.model;
 
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@Component("square")
+@Component("rectangle")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Square implements Shape {
-    private double side;
+public class Rectangle implements Shape {
+    private double length;
+    private double width;
 
     @Override
     public double calculateArea() {
-        return side * side;
+        return length * width;
     }
+
+    @PostConstruct
+    public void init() {}
 }
